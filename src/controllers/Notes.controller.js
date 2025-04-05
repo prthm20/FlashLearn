@@ -3,7 +3,7 @@ import { Note } from "../models/Notes.model.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import OpenAI from "openai";
 import { ApiResponse } from "../utils/ApiResponse.js";
-const openai = new OpenAI({ apiKey: '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' });
+const openai = new OpenAI({ apiKey: process.env.OPEN_AI_KEY});
 
 const Notes=asyncHandler( async (req,res) => {
   const {text,userId} = req.body
